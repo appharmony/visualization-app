@@ -1,0 +1,15 @@
+.dashboard__logout {
+  float: right;
+  padding-top: 40px;
+  padding-right: 50px;
+  font-weight: 500;
+}
+
+.dashboard__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
