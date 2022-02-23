@@ -51,15 +51,22 @@ const data = [
 
 function Dashboard() {
   const [role, setRole] = useState("");
-  //let role = localStorage.getItem("user-role");
   let navigate = useNavigate();
+
+  useEffect(() => {
+    setRole(localStorage.getItem("user-role"));
+  }, []);
+
+  useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      navigate("/");
+    }
+  }, [navigate]);
+
   const logout = () => {
     localStorage.clear();
     navigate("/");
   };
-  useEffect(() => {
-    setRole(localStorage.getItem("user-role"));
-  }, []);
 
   return (
     <div>

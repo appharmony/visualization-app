@@ -37,6 +37,7 @@ function Login() {
       setUsername("");
       setPassword("");
       localStorage.setItem("user-role", response?.data?.roles[0]);
+      localStorage.setItem("token", response?.data?.accessToken);
       navigate("/dashboard");
     } catch (err) {
       if (!err?.response) {
